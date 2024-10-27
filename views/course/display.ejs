@@ -1,0 +1,74 @@
+<%- include('../layouts/header.ejs') %>
+    <h1>display</h1>
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header"> <button type="button" class="btn btn-info" data-toggle="modal"
+                        data-target="#modal-default"> add student </button>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th colspan="">Display Data</th>
+                            </tr>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Name</th>
+                                <th>course</th>
+                                
+                                <th>Email</th>
+
+
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% d.forEach((item,index)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= index+1 %>
+                                    </td>
+                                    <td>
+                                        <%= item.name %>
+                                    </td>
+                                    <td>
+                                        <%= item.course %>
+                                    </td>
+                                   
+                                    <td>
+                                        <%= item.email %>
+                                    </td>
+                                   
+                                    
+                                    
+
+
+                                    <td>
+                                        <a href="/course/view/<%= item._id %>" class="btn btn-info">View</a>
+                                        <a href="/course/edit/<%= item._id %>" class="btn btn-success">Edit</a>
+                                        <a href="/course/delete/<%= item._id %>" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+
+
+                        </tbody>
+                        <tfoot>
+    
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+
+
+
+
+    <%- include('../layouts/footer.ejs') %>
